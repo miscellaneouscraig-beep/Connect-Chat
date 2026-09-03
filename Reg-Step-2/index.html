@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
   <title>Choose Your Live Session | Rethink Revenue</title>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
     :root{
       --navy:#092A44;
@@ -33,9 +34,9 @@
     .status{display:flex;gap:12px;align-items:flex-start;margin-bottom:28px;padding:16px 18px;border-radius:12px;background:#fff8ee;border:1px solid #f5dcc0;color:#63431d;font-size:16px;line-height:1.45}
     .status strong{color:var(--navy)}
     .dot{width:10px;height:10px;margin-top:6px;border-radius:50%;background:var(--orange);flex:0 0 auto}
-    .calendar-frame{min-height:610px;border:1px solid #dfe4e8;border-radius:14px;background:#fff;overflow:hidden;position:relative}
-    .calendly-inline-widget{min-width:320px;height:610px}
-    .placeholder{min-height:610px;display:grid;place-items:center;padding:34px;text-align:center;background:linear-gradient(180deg,#fafbfc,#f2f4f6)}
+    .calendar-frame{min-height:700px;border:1px solid #dfe4e8;border-radius:14px;background:#fff;overflow:hidden;position:relative}
+    .calendly-inline-widget{min-width:320px;height:700px}
+    .placeholder{min-height:700px;display:grid;place-items:center;padding:34px;text-align:center;background:linear-gradient(180deg,#fafbfc,#f2f4f6)}
     .placeholder-inner{max-width:560px}
     .placeholder .mini{display:inline-block;margin-bottom:16px;padding:7px 11px;border-radius:999px;background:#fff1dc;color:#70470b;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
     .placeholder h2{margin:0 0 12px;color:var(--navy);font-size:28px;line-height:1.1}
@@ -49,7 +50,7 @@
       main{padding:28px 14px}
       .intro{padding:34px 26px 28px}
       .content{padding:26px 20px 30px}
-      .calendar-frame,.placeholder,.calendly-inline-widget{min-height:650px;height:650px}
+      .calendar-frame,.placeholder,.calendly-inline-widget{min-height:700px;height:700px}
       .status{font-size:15px}
     }
   </style>
@@ -71,11 +72,16 @@
             <div><strong>Your seat is not reserved yet.</strong> Once you choose a session in Calendly, you’ll receive the event details and Zoom access information.</div>
           </div>
 
-          <div class="calendar-frame" id="calendarFrame" aria-live="polite"></div>
+          <div class="calendar-frame" id="calendarFrame" aria-live="polite">
+            <div id="calendlyEmbed" class="calendly-inline-widget" style="min-width:320px;height:700px;"></div>
+            <noscript>
+              <p style="padding:24px;text-align:center;">JavaScript is required to display the Calendly scheduler. Please use the registration button below.</p>
+            </noscript>
+          </div>
 
           <div class="fallback">
             Having trouble with the calendar?<br />
-            <a id="fallbackLink" href="#" target="_blank" rel="noopener" aria-disabled="true">Open registration in Calendly →</a>
+            <a id="fallbackLink" href="https://calendly.com/rethink-revenue/connect-your-business-to-chatgpt" target="_blank" rel="noopener">Open registration in Calendly →</a>
           </div>
         </div>
       </section>
@@ -83,41 +89,45 @@
   </main>
   <footer>Rethink Revenue · Webinar Registration</footer>
 
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
   <script>
-    /* ============================================================
-       ONLY EDIT THIS VALUE:
-       Replace the placeholder below with Mark's final Calendly
-       Group Event URL, e.g. https://calendly.com/name/event
-       ============================================================ */
-    const CALENDLY_URL = "https://calendly.com/rethink-revenue/connect-your-business-to-chatgpt";
+    (function () {
+      const baseUrl = 'https://calendly.com/rethink-revenue/connect-your-business-to-chatgpt';
+      const parent = document.getElementById('calendlyEmbed');
+      const fallback = document.getElementById('fallbackLink');
 
-    const frame = document.getElementById('calendarFrame');
-    const fallback = document.getElementById('fallbackLink');
-    const isLiveUrl = /^https:\/\/[^\s]+/i.test(CALENDLY_URL);
+      function initCalendly() {
+        if (!parent || !window.Calendly || typeof window.Calendly.initInlineWidget !== 'function') return false;
+        try {
+          window.Calendly.initInlineWidget({
+            url: baseUrl,
+            parentElement: parent
+          });
+          return true;
+        } catch (err) {
+          console.error('Calendly embed failed to initialize:', err);
+          return false;
+        }
+      }
 
-    if (isLiveUrl) {
-      fallback.href = CALENDLY_URL;
-      fallback.removeAttribute('aria-disabled');
+      if (!initCalendly()) {
+        window.addEventListener('load', function () {
+          if (!initCalendly() && parent) {
+            parent.innerHTML = '<div style="padding:32px;text-align:center;color:#525252;">The embedded calendar could not load. Please use the registration button below.</div>';
+          }
+        }, { once: true });
+      }
 
-      const widget = document.createElement('div');
-      widget.className = 'calendly-inline-widget';
-      widget.dataset.url = CALENDLY_URL + (CALENDLY_URL.includes('?') ? '&' : '?') + 'hide_gdpr_banner=1&background_color=ffffff&text_color=525252&primary_color=f8991d';
-      frame.appendChild(widget);
-
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      frame.innerHTML = `
-        <div class="placeholder">
-          <div class="placeholder-inner">
-            <div class="mini">Builder placeholder</div>
-            <h2>Calendly will appear here.</h2>
-            <p>Replace <strong>CALENDLY_URL</strong> near the bottom of this HTML file with Mark’s final Calendly Group Event URL. The embedded calendar and backup button will activate automatically.</p>
-          </div>
-        </div>`;
-    }
+      // If this file is opened directly from a computer (file://), Calendly may not
+      // receive an embed_domain. The direct registration button remains available.
+      if (window.location.protocol === 'file:' && parent) {
+        const note = document.createElement('div');
+        note.style.cssText = 'padding:10px 16px;text-align:center;font-size:13px;color:#6d7479;background:#f6f7f8;border-bottom:1px solid #e3e7ea;';
+        note.textContent = 'Calendly embeds should be tested on the published web page, not by opening this HTML file directly.';
+        parent.parentNode.insertBefore(note, parent);
+      }
+    })();
   </script>
+
 </body>
 </html>
