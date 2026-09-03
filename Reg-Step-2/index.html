@@ -1,1 +1,431 @@
+INV367393159_A19641830_08242026.pdf
+PDF
 
+Yes. I went back through the August 27 Fathom conversations and verified the current paid plans. The setup available to us is:
+
+Calendly Standard
+Zoom Workplace Pro
+No Zoom Webinars add-on
+
+And my recommendation is very clear:
+
+Keep exactly those plans. Do not buy Zoom Webinars right now.
+
+Build the “webinar” as a Calendly Group Event that launches into a regular Zoom Meeting.
+
+That is not a cheap workaround. For the thing Mark is actually trying to create, I think it is the better architecture right now.
+
+Why this fits what we've designed
+
+In the Fathom conversation, Mark described the objective as roughly:
+
+marketing → registration → calendar/reminders → live session → interactive assessment throughout → paid workshop / Rethink Targets / book
+
+He also said that getting 20+ people each week would make the webinar engine useful. He's nowhere near needing hundreds or thousands of simultaneous attendees yet.
+
+Zoom Workplace Pro allows 100 participants for meetings and meetings up to 30 hours.
+
+More importantly, Mark's proposed session isn't really a broadcast webinar. He wants to present a section, stop, have people answer questions in the form, continue, potentially interact with them, take questions, and ultimately move the right people into a much smaller paid workshop.
+
+That's actually a Zoom Meeting use case. Zoom Webinar deliberately separates hosts/panelists from largely view-only attendees.
+
+And Calendly Standard already has the missing piece.
+
+Calendly specifically says its Group event type is for “one host, multiple invitees” and gives webinars and training sessions as examples. Standard supports Group events, automated reminder/follow-up workflows, Zoom integration, and HubSpot integration.
+
+So Mark was basically right in the meeting when he said he may have been bringing his entire toolbox when he only needed a screwdriver.
+
+The architecture I recommend
+Stage	Use	What it does
+Traffic	LinkedIn / Facebook / email / paid	Gets the right people to the webinar page
+Landing page	RethinkRevenue.com	Sells the value of attending and handles attribution/tracking
+Registration	Calendly Standard – Group Event	Name, email, perhaps 1–2 useful qualifying questions
+CRM	Calendly → HubSpot	Creates/updates contact and records meeting activity
+Confirmation/reminders	Calendly Workflows	Confirmation, 24-hour reminder, 1-hour reminder, follow-up
+Live event	Zoom Workplace Pro Meeting	Mark actually delivers the session
+Engagement	The multi-page in-session form we've discussed	Participants answer as Mark teaches
+Conversion	Form completion/thank-you	ZPS Workshop + Rethink Targets + book/next step
+
+Calendly's Zoom integration can automatically add the Zoom conferencing details to the event and confirmation communications.
+
+And because Calendly Standard integrates directly with HubSpot, a booked meeting can create/update the contact and meeting activity in HubSpot. That means we do not need HubSpot to be the scheduling engine. Given the trouble we've already had getting HubSpot to reliably do the things we want it to do, I would deliberately keep HubSpot out of the critical registration/reminder path.
+
+I would configure it like this
+Create one Calendly Group Event for the weekly webinar, with Zoom as the location. Give it the weekly Friday availability we've been discussing rather than creating individual manual meetings.
+Set the registration capacity at 95, not 100. Zoom's meeting ceiling is 100, and I want room for Mark, another Rethink person/producer, Fathom, and an emergency co-host without accidentally filling the room.
+Let Calendly be the registration system. Do not require Calendly registration and then make them register with Zoom again. That's exactly the kind of unnecessary funnel friction we've been trying to eliminate.
+Set a simple reminder sequence in Calendly: immediate confirmation, 24 hours before, 1 hour before, and post-event follow-up. Calendly Standard includes automated reminder/follow-up Workflows.
+Configure the Zoom Meeting to behave like a webinar: mute on entry, host-only screen sharing, Mark controls when people speak, chat/reactions available, and the in-session form open in another tab. That gives him control without losing the interactivity that's central to the concept.
+Embed the Calendly Group Event directly in the webinar landing page or use a very obvious Reserve My Seat button. Calendly supports website embedding. I would not put a HubSpot form between the landing page and Calendly unless we discover a specific piece of attribution data we absolutely cannot collect another way.
+There is one Calendly wrinkle I want us to know about
+
+This was the one thing I found that matters.
+
+For Calendly Group Events, Calendly says it sends an email confirmation rather than a traditional calendar invitation. Each registrant gets an .ics calendar file; Calendly says most calendars add the event automatically, and otherwise the person can add it from the confirmation.
+
+So I want the confirmation page/email to make “Add this to your calendar” extremely obvious.
+
+I do not think that weakness is worth redesigning the entire system around.
+
+And I definitely would not upgrade Calendly
+
+Calendly Teams mainly starts giving us things such as round-robin scheduling, routing and more centralized multi-user scheduling. That's useful when there are multiple salespeople/hosts who need bookings assigned among them. That's not this use case. Calendly Standard already contains the Group event functionality we need.
+
+When I would buy Zoom Webinars
+
+Not now.
+
+Zoom is currently advertising Webinar plans starting at $79/month.
+
+I'd spend that money only when we can point to a real problem the Webinar license solves: we're routinely approaching 90–95 live attendees, we need stronger attendee-vs-panelist controls, we're bringing in outside speakers/panelists, we need webinar-specific Q&A/analytics/branding, or people forwarding the regular Zoom Meeting link becomes a meaningful security/measurement problem.
+
+Until one of those occurs, buying Zoom Webinar is paying for infrastructure in anticipation of scale instead of proving the funnel.
+
+So the decision I would put in the Funnel Command Center is:
+
+DECIDED: MVP webinar technology = Calendly Standard Group Event → Zoom Workplace Pro Meeting. No Zoom Webinar upgrade. No Calendly upgrade.
+
+That also settles the question Mark explicitly asked in the Fathom meeting: “Do I need Calendly involved in the webinar thing?”
+
+Yes — but Calendly is the registration/reminder layer. Zoom is only the room.
+
+And I think that distinction makes the entire funnel architecture much easier to understand.
+
+Monday 10:20 AM
+You can see upcoming posts and dates, with links, in this spreadsheet. Give me some verbiage that drives readers to the webinar from posts based on that content: 
+@
+2026 RR Blog Schedule
+
+Yes. I looked at the upcoming schedule and opened the linked drafts. There’s a strong opportunity here because the next run of content naturally leads into the webinar concept: technology—including AI—can only become useful once the business has given it the right context, definitions, strategy, and operating rules.
+
+I would not tack on a generic “Join our webinar!” at the bottom of every post. I’d use a short bridge that connects the specific idea they just read to the thing Mark will show them live.
+
+Aug. 31 — Pipeline Close Ratio: The Math Behind Sales Reality
+
+The article makes the point that pipeline math is an operating signal: a bloated pipeline may indicate targeting, qualification, marketing, process, CRM, or leadership problems—not simply a need for more opportunities.
+
+CTA:
+
+Your pipeline numbers can tell you something is wrong. The harder question is understanding why.
+
+That gets much easier when your business has a shared set of definitions, decisions and operating rules—and your technology has access to them.
+
+In our upcoming live webinar, Mark Perone will show you how to build that foundation and use AI with the tools you already have to create a much clearer picture of how your business actually operates.
+
+Join us live → [WEBINAR LINK]
+
+I like this one a lot because it doesn't suddenly change subjects from pipeline to AI.
+
+Sept. 3 — What Is a Revenue Operating System—and Why Isn’t Your CRM One Yet?
+
+This article is almost a perfect lead-in. It argues that a Revenue Operating System supplies the shared architecture across strategy, people, process, information and technology, while software supports that model rather than creating it.
+
+CTA:
+
+Your CRM shouldn't be responsible for figuring out how your business works.
+
+Neither should AI.
+
+But once you give your technology the right context, definitions and operating rules, it becomes dramatically more useful.
+
+That's what we're working through in our live webinar: how to capture what makes your business your business and turn it into a foundation your AI and connected tools can actually use.
+
+Save your seat → [WEBINAR LINK]
+
+This may be my favorite overall formula.
+
+Sept. 7 — Your CRM Isn’t the Strategy. It Should Support One.
+
+This draft explicitly says the CRM can organize and automate work but can't decide which work matters; leadership first has to define audience, customer journey, evidence, ownership and outcomes.
+
+CTA:
+
+A CRM can't invent your strategy.
+
+And AI can't understand your business until you give it enough context to know what matters.
+
+In our upcoming live webinar, Mark Perone will show you how to capture that context—the principles, decisions, knowledge and operating rules behind your business—and use it to make AI and the tools you already own significantly more useful.
+
+Join the webinar → [WEBINAR LINK]
+
+This one feels especially strong immediately after the article because “CRM can't invent your strategy / AI can't understand it without context” is one continuous idea.
+
+Sept. 10 — Why Revenue Problems Must Be Diagnosed Before They’re Treated
+
+The post argues against prescribing more leads, training, automation, or software before determining where the actual failure is occurring across strategy, process, people and technology.
+
+CTA:
+
+Before you ask another tool to solve the problem, make sure the tool understands the business it's supposed to help.
+
+That's especially true with AI.
+
+In our live webinar, we'll show you a practical way to give AI the business context it usually doesn't have—then connect that intelligence to the tools and information your company is already creating every day.
+
+Reserve your seat → [WEBINAR LINK]
+
+I'd consider “Before you ask another tool to solve the problem…” almost an extension of the article itself.
+
+Sept. 14 — Strategy, Process, People and Technology: The Correct Order for Revenue Transformation
+
+This is another very natural one. The article's central sequence is Strategy → Process → People → Technology, with technology positioned as leverage for a system that has already been defined.
+
+CTA:
+
+Technology belongs at the end of the sequence for a reason.
+
+But once your strategy, process and people are clear, technology can create enormous leverage.
+
+In our upcoming live webinar, Mark Perone will show you how to capture the knowledge and context behind your business, give that foundation to AI, and begin connecting the tools you already use around it.
+
+Join us live → [WEBINAR LINK]
+
+This may be the cleanest conceptual bridge to the webinar in the whole series.
+
+Sept. 17 — Why Most Businesses Don’t Have a Sales Problem
+
+This draft makes the argument that sales frequently exposes failures created upstream—poor targeting, generic messaging, undefined qualification, broken follow-up and pipeline fiction.
+
+CTA:
+
+If sales is where the problem becomes visible, that doesn't mean sales is where the problem began.
+
+The challenge is seeing the business as a connected system instead of a collection of departments, tools and isolated data.
+
+That's part of what we'll show you in our live webinar: how to give AI enough context about your business to help you connect what your meetings, files, CRM and other tools are already telling you.
+
+Save your seat → [WEBINAR LINK]
+
+That last sentence is important because it makes the webinar sound practical, not like another AI lecture.
+
+Sept. 21 — The Difference Between a Sales Process and a Revenue Operating System
+
+This article distinguishes the sales process from the larger system connecting Target → Suspect → Lead → Opportunity → Customer, along with audience, messaging, handoffs, information, CRM and leadership decisions.
+
+CTA:
+
+A sales process is one piece of the business.
+
+AI becomes far more powerful when it can see the larger picture.
+
+In our upcoming webinar, Mark Perone will show you how to create a foundational body of business knowledge your AI can use—and how to connect that context to the tools you already rely on every day.
+
+Join the live session → [WEBINAR LINK]
+
+I think we should also establish a recognizable “house CTA”
+
+We don't want every CTA to be word-for-word identical, but repetition of the promise is actually good. I would keep returning to some version of:
+
+Your AI is only as useful as the context you give it.
+
+Join Mark Perone live and learn how to capture the knowledge behind your business, give AI the context it needs, and connect that intelligence to the tools you already use.
+
+[Reserve Your Seat →]
+
+Then the 1–3 sentences immediately above it change to match the post.
+
+That creates a nice campaign effect: someone might see five different Rethink Revenue posts over three weeks, but gradually they start recognizing:
+
+“Ohhh. This is all connected. Mark is going to show me how to get my actual business into AI—not just teach me how to write prompts.”
+
+And that, I think, is the webinar's strongest selling proposition.
+
+One more thought: I would probably stop calling it simply “our webinar” in the actual posts. We need a repeatable name/descriptor that can appear over and over—something like “Build Your Business into AI”, “Make AI Understand Your Business”, or whatever we ultimately land on. Once we have that, these CTAs become substantially stronger because we're building recognition for an event, not merely linking to a webinar registration page.
+
+Done. I added a new “Webinar CTA (Ari Pull)” column and populated the matching CTAs for the Aug. 31–Sept. 21 posts.
+
+Download the updated 2026 RR Blog Schedule
+
+2026 RR Blog Schedule_with_Webinar_CTAs.xlsx
+Spreadsheet
+
+Done. I added a Zoom meeting-specific setup section to the Webinar Link & Tech Checklist, including:
+
+mute on entry
+waiting room
+join-before-host off
+host-only screen sharing
+participant unmute behavior
+Melissa as co-host
+security/passcode check
+end-to-end test after Calendly creates the meeting
+
+I also made the operating rule explicit: configure the webinar meeting itself and avoid changing Mark’s global Zoom defaults unless absolutely necessary.
+
+Today 10:08 PM
+Okay -- I can't embed in a Hubspot thank you. Do I make a landing page for that? Or just make a link to Calendly?
+
+Make a very simple landing page for the post-form step. I prefer that over sending them straight to Calendly.
+
+The flow becomes:
+
+Webinar landing page → HubSpot form → redirect to tiny “Almost there” page → Calendly → Zoom
+
+That page does not need to be a full marketing page. Think of it as a registration bridge page with no navigation and almost no distractions:
+
+Almost there — choose your live session.
+You’ve completed the first step. Select the webinar date that works for you below to finish your registration.
+
+[Calendly embed]
+
+And underneath:
+
+Having trouble with the calendar?
+Open registration in Calendly →
+
+Why I like this better than a direct Calendly redirect: it makes the two-step process make sense, gives you a place to embed Calendly, gives you a backup link if the embed misbehaves, keeps everything visually branded as Rethink Revenue, and gives you a trackable page view between HubSpot form completion and Calendly registration.
+
+That last point is especially useful. You could actually measure:
+
+100 form submissions → 82 reached registration page → 71 Calendly registrations
+
+Then you know exactly where people are dropping out.
+
+If you are trying to get this functional as fast as humanly possible, though, a direct redirect to Calendly is completely acceptable as Version 1. There is nothing technically wrong with:
+
+HubSpot submit → Calendly event page.
+
+My preference would be:
+
+Now: create the lightweight bridge landing page.
+Fallback: direct Calendly URL until the bridge page is ready.
+
+And I would call it something boring internally like Webinar Registration – Step 2 so nobody mistakes it for another marketing landing page.
+
+Can you create that simple landing page?
+
+Yes — it’s ready. I kept it deliberately simple and consistent with the webinar styling: dark blue #092A44, Rethink orange, strong hierarchy, no navigation, and no recreated logo. The brand guide specifically calls for clear hierarchy, generous whitespace, and restrained CTA use.
+
+The page contains one Calendly placeholder. Replace Mark’s Group Event URL once in the HTML and it automatically activates both the embedded Calendly calendar and the backup “Open registration in Calendly →” button.
+
+Download the landing page HTML
+
+I also made a Netlify-ready ZIP with the file already named index.html:
+
+Download the Netlify-ready ZIP
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Choose Your Live Session | Rethink Revenue</title>
+  <style>
+    :root{
+      --navy:#092A44;
+      --orange:#F8991D;
+      --charcoal:#525252;
+      --medium:#949797;
+      --pale:#E9ECEF;
+      --white:#FFFFFF;
+      --radius:16px;
+      --shadow:0 24px 70px rgba(9,42,68,.16);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:#f6f7f8;color:var(--charcoal);font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif}
+    body{display:flex;flex-direction:column}
+    .topbar{height:8px;background:var(--orange)}
+    main{flex:1;display:grid;place-items:center;padding:52px 22px}
+    .shell{width:min(1040px,100%)}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:var(--navy);font-weight:700;letter-spacing:.11em;text-transform:uppercase;font-size:13px}
+    .eyebrow::before{content:"";width:42px;height:4px;background:var(--orange);border-radius:999px}
+    .panel{background:var(--white);border:1px solid #e3e7ea;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .intro{padding:46px 52px 34px;background:linear-gradient(135deg,var(--navy),#0d3554);color:var(--white)}
+    h1{margin:0;max-width:820px;font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-.035em;font-weight:800}
+    h1 span{color:var(--orange)}
+    .intro p{max-width:760px;margin:22px 0 0;font-size:clamp(18px,2.1vw,23px);line-height:1.48;color:rgba(255,255,255,.88)}
+    .content{padding:34px 52px 44px}
+    .status{display:flex;gap:12px;align-items:flex-start;margin-bottom:28px;padding:16px 18px;border-radius:12px;background:#fff8ee;border:1px solid #f5dcc0;color:#63431d;font-size:16px;line-height:1.45}
+    .status strong{color:var(--navy)}
+    .dot{width:10px;height:10px;margin-top:6px;border-radius:50%;background:var(--orange);flex:0 0 auto}
+    .calendar-frame{min-height:610px;border:1px solid #dfe4e8;border-radius:14px;background:#fff;overflow:hidden;position:relative}
+    .calendly-inline-widget{min-width:320px;height:610px}
+    .placeholder{min-height:610px;display:grid;place-items:center;padding:34px;text-align:center;background:linear-gradient(180deg,#fafbfc,#f2f4f6)}
+    .placeholder-inner{max-width:560px}
+    .placeholder .mini{display:inline-block;margin-bottom:16px;padding:7px 11px;border-radius:999px;background:#fff1dc;color:#70470b;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .placeholder h2{margin:0 0 12px;color:var(--navy);font-size:28px;line-height:1.1}
+    .placeholder p{margin:0;color:#697178;font-size:17px;line-height:1.5}
+    .fallback{margin-top:22px;text-align:center;color:#6d7479;font-size:15px}
+    .fallback a{display:inline-flex;margin-top:12px;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:12px;background:var(--orange);color:#1f2a30;text-decoration:none;font-weight:800;box-shadow:0 7px 22px rgba(248,153,29,.24)}
+    .fallback a:hover{filter:brightness(.96);transform:translateY(-1px)}
+    .fallback a[aria-disabled="true"]{opacity:.55;pointer-events:none}
+    footer{padding:0 22px 28px;text-align:center;color:#858b90;font-size:13px}
+    @media (max-width:680px){
+      main{padding:28px 14px}
+      .intro{padding:34px 26px 28px}
+      .content{padding:26px 20px 30px}
+      .calendar-frame,.placeholder,.calendly-inline-widget{min-height:650px;height:650px}
+      .status{font-size:15px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar" aria-hidden="true"></div>
+  <main>
+    <div class="shell">
+      <!-- Approved logo intentionally omitted unless the exact supplied logo asset is inserted. -->
+      <div class="eyebrow">Webinar registration · Step 2 of 2</div>
+      <section class="panel" aria-labelledby="page-title">
+        <div class="intro">
+          <h1 id="page-title">Almost there — <span>choose your live session.</span></h1>
+          <p>You’ve completed the first step. Select the session that works for you below to finish your registration.</p>
+        </div>
+        <div class="content">
+          <div class="status">
+            <span class="dot" aria-hidden="true"></span>
+            <div><strong>Your seat is not reserved yet.</strong> Once you choose a session in Calendly, you’ll receive the event details and Zoom access information.</div>
+          </div>
+
+          <div class="calendar-frame" id="calendarFrame" aria-live="polite"></div>
+
+          <div class="fallback">
+            Having trouble with the calendar?<br />
+            <a id="fallbackLink" href="#" target="_blank" rel="noopener" aria-disabled="true">Open registration in Calendly →</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>Rethink Revenue · Webinar Registration</footer>
+
+  <script>
+    /* ============================================================
+       ONLY EDIT THIS VALUE:
+       Replace the placeholder below with Mark's final Calendly
+       Group Event URL, e.g. https://calendly.com/name/event
+       ============================================================ */
+    const CALENDLY_URL = "PASTE_MARKS_CALENDLY_GROUP_EVENT_URL_HERE";
+
+    const frame = document.getElementById('calendarFrame');
+    const fallback = document.getElementById('fallbackLink');
+    const isLiveUrl = /^https:\/\/[^\s]+/i.test(CALENDLY_URL);
+
+    if (isLiveUrl) {
+      fallback.href = CALENDLY_URL;
+      fallback.removeAttribute('aria-disabled');
+
+      const widget = document.createElement('div');
+      widget.className = 'calendly-inline-widget';
+      widget.dataset.url = CALENDLY_URL + (CALENDLY_URL.includes('?') ? '&' : '?') + 'hide_gdpr_banner=1&background_color=ffffff&text_color=525252&primary_color=f8991d';
+      frame.appendChild(widget);
+
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      frame.innerHTML = `
+        <div class="placeholder">
+          <div class="placeholder-inner">
+            <div class="mini">Builder placeholder</div>
+            <h2>Calendly will appear here.</h2>
+            <p>Replace <strong>CALENDLY_URL</strong> near the bottom of this HTML file with Mark’s final Calendly Group Event URL. The embedded calendar and backup button will activate automatically.</p>
+          </div>
+        </div>`;
+    }
+  </script>
+</body>
+</html>
+Rethink_Revenue_Webinar_Registration_Step_2.html
+HTML
