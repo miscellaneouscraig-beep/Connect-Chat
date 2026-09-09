@@ -1,18 +1,6 @@
 <!doctype html>
 <html lang="en">
 <!--
-MOBILE RESPONSIVE PATCH
-Paste this entire <style> block immediately before </head> in the current index.html.
-It is intentionally last so it overrides the existing mobile rules without changing desktop.
--->
-<style>
-/* ============================================================
-   RETHINK REVENUE — CONNECT CHAT
-   Mobile responsive rescue patch
-   Add this block at the VERY END of the existing <style> element,
-   immediately before </style>.
-   Desktop styling remains unchanged.
-   ============================================================ */
 
 /* Keep the GitHub Pages edition from creating a viewport-width overflow.
    The WordPress page keeps its existing full-bleed behavior. */
@@ -551,6 +539,143 @@ It is intentionally last so it overrides the existing mobile rules without chang
 }
 
 </style>
+/* ============================================================
+   RETHINK REVENUE — MOBILE/TABLET COLUMN STACK FIX
+   Paste this AFTER all existing CSS (last <style> block before </head>).
+   This specifically fixes the "squished right column" problem.
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+  #rethink-connect-page .narrow-grid,
+  #rethink-connect-page .distinction-grid,
+  #rethink-connect-page .learn-grid,
+  #rethink-connect-page .artifact-layout,
+  #rethink-connect-page .register-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 34px !important;
+    align-items: start !important;
+  }
+
+  #rethink-connect-page .distinction .section-heading,
+  #rethink-connect-page .distinction .body-copy,
+  #rethink-connect-page .artifact-intro,
+  #rethink-connect-page .register-copy {
+    transform: none !important;
+    margin-top: 0 !important;
+  }
+
+  #rethink-connect-page .body-copy {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 22px !important;
+  }
+
+  #rethink-connect-page .body-copy p {
+    max-width: 760px;
+  }
+
+  #rethink-connect-page .learn-section .sticky-heading,
+  #rethink-connect-page .sticky-heading {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-top: 0 !important;
+    grid-row: auto !important;
+  }
+
+  #rethink-connect-page .learn-section .sticky-heading > p:last-child {
+    max-width: 720px !important;
+  }
+
+  #rethink-connect-page .learning-list {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+  }
+
+  #rethink-connect-page .learning-item,
+  #rethink-connect-page .learning-item:last-child {
+    grid-column: auto !important;
+    width: 100% !important;
+  }
+
+  #rethink-connect-page .artifact-intro {
+    width: 100% !important;
+    max-width: 760px !important;
+  }
+
+  #rethink-connect-page .artifact-grid {
+    width: 100% !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #rethink-connect-page .register-copy {
+    width: 100% !important;
+    max-width: 760px !important;
+  }
+
+  #rethink-connect-page .form-card {
+    width: 100% !important;
+    max-width: 760px !important;
+    justify-self: start !important;
+  }
+
+  #rethink-connect-page .presenter-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+    padding: 34px !important;
+  }
+
+  #rethink-connect-page .presenter-copy {
+    width: 100% !important;
+    max-width: 760px !important;
+  }
+
+  #rethink-connect-page .presenter-image-wrap {
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 620px !important;
+  }
+}
+
+@media (max-width: 700px) {
+
+  #rethink-connect-page .narrow-grid,
+  #rethink-connect-page .distinction-grid,
+  #rethink-connect-page .learn-grid,
+  #rethink-connect-page .artifact-layout,
+  #rethink-connect-page .register-grid {
+    gap: 26px !important;
+  }
+
+  #rethink-connect-page .artifact-grid,
+  #rethink-connect-page .fit-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #rethink-connect-page .artifact-card,
+  #rethink-connect-page .fit-card,
+  #rethink-connect-page .fit-card:last-child {
+    grid-column: auto !important;
+    width: 100% !important;
+  }
+
+  #rethink-connect-page .presenter-card {
+    padding: 24px 18px !important;
+  }
+
+  #rethink-connect-page .presenter-image-wrap {
+    max-width: none !important;
+  }
+
+  #rethink-connect-page .form-card {
+    max-width: none !important;
+  }
+}
 
   <head>
   <meta charset="utf-8">
