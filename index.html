@@ -1,6 +1,558 @@
 <!doctype html>
 <html lang="en">
-<head>
+<!--
+MOBILE RESPONSIVE PATCH
+Paste this entire <style> block immediately before </head> in the current index.html.
+It is intentionally last so it overrides the existing mobile rules without changing desktop.
+-->
+<style>
+/* ============================================================
+   RETHINK REVENUE — CONNECT CHAT
+   Mobile responsive rescue patch
+   Add this block at the VERY END of the existing <style> element,
+   immediately before </style>.
+   Desktop styling remains unchanged.
+   ============================================================ */
+
+/* Keep the GitHub Pages edition from creating a viewport-width overflow.
+   The WordPress page keeps its existing full-bleed behavior. */
+@media (max-width: 820px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body:not(.page-id-7332) #rethink-connect-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow-x: clip;
+  }
+
+  #rethink-connect-page,
+  #rethink-connect-page * {
+    min-width: 0;
+  }
+
+  /* ---------- PAGE GUTTERS / HEADER ---------- */
+
+  .shell {
+    width: calc(100% - 32px);
+    max-width: 1180px;
+  }
+
+  .header-inner {
+    min-height: 72px;
+    gap: 12px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .brand img {
+    width: min(190px, 52vw);
+    max-width: 100%;
+  }
+
+  /* There is already a full-width hero CTA immediately below.
+     Hiding the duplicate header CTA prevents narrow-phone overflow. */
+  .header-cta {
+    display: none;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    padding: 108px 0 62px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  #rethink-connect-page .hero-copy h1 {
+    max-width: 100% !important;
+    font-size: clamp(2.7rem, 11.5vw, 4rem) !important;
+    line-height: .96 !important;
+    letter-spacing: -.035em !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .hero-subtitle {
+    margin-top: 20px;
+    max-width: 100%;
+    font-size: 1.06rem;
+    line-height: 1.5;
+  }
+
+  .event-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 23px;
+  }
+
+  .event-meta span {
+    font-size: .89rem;
+  }
+
+  .session-choice {
+    margin-top: 6px;
+    font-size: .8rem;
+  }
+
+  .hero-fit {
+    margin-top: 18px;
+    padding-left: 12px;
+  }
+
+  .hero-fit p {
+    font-size: .88rem;
+    line-height: 1.45;
+  }
+
+  .hero-fit small {
+    font-size: .73rem;
+    line-height: 1.45;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 23px !important;
+    width: 100%;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+  }
+
+  .microcopy {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: .78rem;
+    line-height: 1.4;
+  }
+
+  /* ---------- TECH STACK MAP ----------
+     Build a real vertical mobile flow instead of rotating the
+     desktop horizontal connector. */
+
+  .system-map {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 20px;
+    transform: none !important;
+  }
+
+  .map-topline {
+    padding: 14px 16px;
+    font-size: .62rem;
+  }
+
+  .map-topline span:last-child {
+    display: block;
+  }
+
+  .map-body {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 16px;
+  }
+
+  .source-stack,
+  .output-stack {
+    width: 100%;
+  }
+
+  .source-node {
+    width: 100%;
+    padding: 11px 12px;
+  }
+
+  .source-node span {
+    font-size: .8rem;
+  }
+
+  .source-node small {
+    font-size: .66rem;
+  }
+
+  .map-center {
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 15px 0;
+    transform: none !important;
+  }
+
+  .flow-line {
+    width: 1px;
+    height: 22px;
+    background: #aeb4b5;
+  }
+
+  .flow-line:last-child::after {
+    right: auto;
+    left: -3px;
+    top: auto;
+    bottom: -1px;
+    border-left: 3.5px solid transparent;
+    border-right: 3.5px solid transparent;
+    border-top: 5px solid #aeb4b5;
+    border-bottom: 0;
+  }
+
+  .ai-node {
+    width: 104px;
+    box-shadow: 0 0 0 6px #fff, 0 0 0 7px #d8dcdc;
+  }
+
+  .ai-node strong {
+    font-size: .82rem;
+  }
+
+  .ai-node small {
+    font-size: .51rem;
+  }
+
+  .output-stack > div {
+    font-size: .72rem;
+  }
+
+  .map-footer {
+    padding: 12px 16px;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  /* ---------- SECTION RHYTHM / TYPOGRAPHY ---------- */
+
+  .section,
+  .distinction,
+  .learn-section,
+  .feature-breakout,
+  .artifact-section,
+  .presenter-section,
+  .register-section {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  h2,
+  .distinction .section-heading h2,
+  .learn-section .sticky-heading h2,
+  .feature-breakout .section-heading h2,
+  .artifact-intro h2,
+  .register-copy h2 {
+    font-size: clamp(2.25rem, 9.6vw, 3.25rem) !important;
+    line-height: 1 !important;
+  }
+
+  .narrow-grid,
+  .distinction-grid,
+  .learn-grid,
+  .artifact-layout,
+  .register-grid {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  .distinction .section-heading,
+  .distinction .body-copy,
+  .artifact-intro,
+  .register-copy {
+    transform: none !important;
+    margin-top: 0 !important;
+  }
+
+  .body-copy {
+    padding-left: 20px;
+    font-size: 1rem;
+  }
+
+  /* ---------- LEARNING CARDS ---------- */
+
+  .learn-section .sticky-heading {
+    position: static;
+    padding-top: 0;
+  }
+
+  .learning-list {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .learning-item,
+  .learning-item:last-child {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  .learning-item > span {
+    padding-bottom: 16px;
+  }
+
+  .learning-item:last-child {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    align-items: start;
+  }
+
+  .learning-item:last-child > span {
+    padding: 0;
+  }
+
+  .learning-item h3 {
+    font-size: 1.3rem;
+  }
+
+  /* ---------- FIT SECTION ---------- */
+
+  .feature-breakout .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-heading.centered {
+    margin-bottom: 36px;
+  }
+
+  .fit-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .fit-card,
+  .fit-card:last-child {
+    grid-column: auto !important;
+    min-height: 0;
+    padding: 24px 20px;
+  }
+
+  .fit-state {
+    margin-bottom: 18px;
+  }
+
+  .fit-card h3 {
+    font-size: 1.72rem;
+  }
+
+  /* ---------- BUSINESS CANON ---------- */
+
+  .artifact-intro {
+    max-width: 100%;
+  }
+
+  .artifact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .artifact-card,
+  .artifact-card:nth-child(2),
+  .artifact-card:nth-child(4) {
+    min-height: 0;
+    padding: 22px 20px;
+    transform: none !important;
+  }
+
+  .artifact-card h3 {
+    margin-top: 18px;
+    font-size: 1.4rem;
+  }
+
+  /* ---------- PRESENTER ---------- */
+
+  .presenter-card {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 24px 18px 18px !important;
+    border-radius: 20px;
+  }
+
+  .presenter-copy {
+    padding: 0 2px 10px;
+  }
+
+  .presenter-copy h2 {
+    font-size: clamp(2.75rem, 12vw, 3.9rem) !important;
+  }
+
+  .presenter-image-wrap {
+    grid-row: auto !important;
+    min-height: 0;
+    height: auto;
+    border-radius: 17px;
+  }
+
+  .presenter-image {
+    width: 100%;
+    height: auto;
+    max-height: 390px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 22%;
+  }
+
+  /* ---------- REGISTRATION ---------- */
+
+  .register-grid {
+    align-items: stretch;
+  }
+
+  .register-copy {
+    width: 100%;
+  }
+
+  .register-copy > p:not(.section-label) {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .register-copy ul {
+    margin-top: 24px;
+    gap: 10px;
+  }
+
+  .register-copy li {
+    align-items: flex-start;
+    font-size: .91rem;
+    line-height: 1.45;
+  }
+
+  .register-copy li svg {
+    margin-top: .16em;
+  }
+
+  .form-card {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 14px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .form-heading {
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 17px;
+    margin-bottom: 17px;
+  }
+
+  .form-heading > span {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+  }
+
+  .form-heading p {
+    font-size: 1.22rem;
+    line-height: 1.05;
+  }
+
+  .form-heading small {
+    margin-top: 5px;
+    font-size: .76rem;
+    line-height: 1.4;
+  }
+
+  /* Strong containment for HubSpot's new form iframe/embed.
+     We cannot style the contents of a cross-origin iframe, but we
+     can prevent the iframe itself from forcing desktop width. */
+
+  .hubspot-form-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow-x: clip;
+  }
+
+  .hubspot-form-wrap .hs-form-frame,
+  .hubspot-form-wrap iframe,
+  .hs-form-frame,
+  .hs-form-frame iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    border: 0 !important;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-inner img {
+    width: min(190px, 60vw);
+  }
+}
+
+/* Extra-narrow phones: iPhone SE / 320–390-ish viewports */
+@media (max-width: 420px) {
+  .shell {
+    width: calc(100% - 24px);
+  }
+
+  .hero {
+    padding-top: 96px;
+  }
+
+  .brand img {
+    width: min(160px, 55vw);
+  }
+
+  #rethink-connect-page .hero-copy h1 {
+    font-size: clamp(2.45rem, 12vw, 3.2rem) !important;
+    line-height: .98 !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .eyebrow,
+  .section-label {
+    font-size: .7rem;
+    letter-spacing: .13em;
+  }
+
+  .map-topline {
+    font-size: .56rem;
+    letter-spacing: .08em;
+  }
+
+  .form-card {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+</style>
+
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Connect Your Tech Stack to ChatGPT | Free Live Working Session</title>
